@@ -23,7 +23,7 @@ public class TaskController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask")
-    public void deleteTask(Long taskId){
+    public void deleteTask(Long taskId) {
 
     }
 
@@ -33,7 +33,7 @@ public class TaskController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "createTask")
-    public void createTask(TaskDto taskDto){
+    public void createTask(TaskDto taskDto) {
 
     }
 }
