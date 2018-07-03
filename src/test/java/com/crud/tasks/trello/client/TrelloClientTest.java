@@ -67,7 +67,7 @@ public class TrelloClientTest {
         // Given
         TrelloCardDto trelloCardDto = new TrelloCardDto(
                 "Test task",
-                "Tesk description",
+                "Test Description",
                 "top",
                 "test_id"
         );
