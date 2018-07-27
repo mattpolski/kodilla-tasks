@@ -44,8 +44,7 @@ public class TrelloServiceTest {
     public void shouldCreateNewCard() {
         TrelloDto trelloDto = new TrelloDto(23, 23);
         TrelloAttachmentByType trelloAttachmentByType = new TrelloAttachmentByType(trelloDto);
-        TrelloBadgesDto trelloBadgesDto = new TrelloBadgesDto(1, trelloAttachmentByType);
-        CreatedTrelloCardDto createdTrelloCardDto = new CreatedTrelloCardDto("1", "New Card", "short Uri", trelloBadgesDto);
+        CreatedTrelloCardDto createdTrelloCardDto = new CreatedTrelloCardDto("1", "New Card", "short Uri");
         TrelloCardDto trelloCardDto = new TrelloCardDto("New Card", "Card for tests", "pos", "1");
 
         when(trelloClient.createNewCard(trelloCardDto)).thenReturn(createdTrelloCardDto);
@@ -54,6 +53,5 @@ public class TrelloServiceTest {
 
         Assert.assertEquals("New Card", testCard.getName());
         Assert.assertEquals("short Uri", createdTrelloCardDto.getShortUrl());
-        Assert.assertEquals(23, createdTrelloCardDto.getTrelloBadgesDto().getAttachmentByType().getTrelloDto().getBoard());
     }
 }

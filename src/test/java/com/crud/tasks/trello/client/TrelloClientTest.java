@@ -77,8 +77,7 @@ public class TrelloClientTest {
         CreatedTrelloCardDto createdTrelloCardDto = new CreatedTrelloCardDto(
                 "1",
                 "Test task",
-                "http://test.com",
-                 trelloBadgesDto
+                "http://test.com"
         );
 
         when(restTemplate.postForObject(uri, null, CreatedTrelloCardDto.class)).thenReturn(createdTrelloCardDto);
