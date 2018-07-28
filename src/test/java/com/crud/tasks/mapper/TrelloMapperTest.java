@@ -15,7 +15,7 @@ public class TrelloMapperTest {
     public void testMapToBoards() {
         List<TrelloBoardDto> trelloBoardDtos = new ArrayList<>();
         List<TrelloListDto> trelloListDtos = new ArrayList<>();
-        TrelloBoardDto trelloBoardDto = new TrelloBoardDto("Board", "1", trelloListDtos);
+        TrelloBoardDto trelloBoardDto = new TrelloBoardDto("1", "Board", trelloListDtos);
         trelloBoardDtos.add(trelloBoardDto);
 
         List<TrelloBoard> trelloBoardList = trelloMapper.mapToBoards(trelloBoardDtos);
