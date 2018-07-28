@@ -75,16 +75,16 @@ public class TaskControllerTest {
     @Test
     public void shouldGetTask() throws Exception {
         Task task = new Task(1L, "Task", "Test Task");
-        TaskDto taskDto = taskMapper.mapToTaskDto(task);
+        TaskDto taskDto = new TaskDto(1L, "Task", "Test Task");
 
         when(dbService.getTask(1L)).thenReturn(Optional.ofNullable(task));
         when(taskMapper.mapToTaskDto(any(Task.class))).thenReturn(taskDto);
 
         mockMvc.perform(get("/v1/task/getTask").param("taskId", "1").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].id", is(1)))
-                .andExpect(jsonPath("$[0].title", is("Task")))
-                .andExpect(jsonPath("$[0].content", is("Test Task")));
+                .andExpect(jsonPath("$.id", is(1)))
+                .andExpect(jsonPath("$.title", is("Task")))
+                .andExpect(jsonPath("$.content", is("Test Task")));
     }
 
     @Test
