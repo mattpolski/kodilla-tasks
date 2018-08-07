@@ -19,6 +19,7 @@ public class SimpleEmailService {
 
     @Autowired
     private JavaMailSender javaMailSender;
+
     @Autowired
     private MailCreatorService mailCreatorService;
 
